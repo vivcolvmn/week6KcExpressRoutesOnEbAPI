@@ -1,10 +1,11 @@
 import express from 'express';
 import fetch from 'node-fetch';
+require('dotenv').config();
 
 const app = express();
 const port = 3000;
 // Replace 'YOUR_OAUTH_TOKEN' with your actual OAuth token
-const oauthToken = '5A3JCIY3GWN2UDZDXM34';
+const oauthToken = process.env.AUTH_TOKEN;
 
 app.get('/', (req, res) => {
     res.send('Root is running');
